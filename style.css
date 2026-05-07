@@ -1,14 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap");
+
 :root {
-  --bg-1: #050a1f;
-  --bg-2: #111a43;
-  --card: rgba(20, 28, 66, 0.9);
-  --card-soft: rgba(12, 18, 44, 0.8);
-  --border: rgba(126, 156, 255, 0.25);
-  --text: #ecf2ff;
-  --text-soft: #a9bce6;
-  --accent: #5dd5ff;
-  --accent-strong: #2b82ff;
-  --good: #67e8a3;
+  --bg-1: #dde5fa;
+  --bg-2: #cfdaf3;
+  --surface: rgba(245, 249, 255, 0.76);
+  --surface-soft: rgba(245, 249, 255, 0.58);
+  --border: rgba(107, 131, 194, 0.24);
+  --text: #0f1d40;
+  --text-soft: #4f638f;
+  --accent: #4587ff;
+  --good: #1f9c63;
 }
 
 * {
@@ -17,275 +18,214 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  min-height: 100vh;
+  height: 100%;
+}
+
+body {
+  min-height: 100dvh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 17px;
   color: var(--text);
-  background: radial-gradient(circle at 20% 20%, #1a2b72 0%, transparent 50%),
-    radial-gradient(circle at 85% 10%, #18335f 0%, transparent 45%),
-    linear-gradient(140deg, var(--bg-1), var(--bg-2));
+  background: radial-gradient(circle at 12% 12%, #ccd8f6 0%, transparent 42%),
+    radial-gradient(circle at 90% 8%, #c6ddf5 0%, transparent 36%),
+    linear-gradient(130deg, var(--bg-1), var(--bg-2));
+  overflow: hidden;
 }
 
 .app-shell {
-  width: min(1200px, 100%);
-  margin: 0 auto;
-  padding: 1.5rem;
+  width: 100%;
+  height: 100dvh;
+  padding: 0.8rem;
   display: grid;
-  gap: 1rem;
+  grid-template-rows: auto 1fr;
+  gap: 0.8rem;
+  overflow: hidden;
 }
 
-.top-bar,
 .algorithm-panel,
 .timing-container,
 .stats-container {
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--card-soft);
-  backdrop-filter: blur(8px);
-}
-
-.top-bar {
-  padding: 1rem 1.25rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-.top-bar h1 {
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.top-bar p {
-  color: var(--text-soft);
-  font-size: 0.95rem;
-  text-align: right;
-}
-
-kbd {
-  background: #10183f;
-  border: 1px solid rgba(147, 176, 255, 0.35);
-  border-bottom-width: 2px;
-  border-radius: 6px;
-  padding: 0.08rem 0.35rem;
-  color: var(--accent);
-  font-weight: 600;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(98, 125, 184, 0.12);
+  backdrop-filter: blur(6px);
 }
 
 .algorithm-panel {
-  padding: 1rem;
-}
-
-.panel-heading {
-  margin-bottom: 0.7rem;
-}
-
-.panel-heading h2 {
-  font-size: 1.05rem;
-  letter-spacing: 0.04em;
-  color: var(--text-soft);
+  padding: 0.8rem;
 }
 
 .algorithm-container {
   display: grid;
-  gap: 0.55rem;
-  grid-template-columns: repeat(9, minmax(62px, 1fr));
+  gap: 0.6rem;
+  grid-template-columns: repeat(10, minmax(92px, 1fr));
 }
 
 .move-container {
   text-align: center;
-  padding: 0.45rem 0.25rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
+  padding: 0.55rem 0.2rem;
+  border-radius: 14px;
+  background: var(--surface-soft);
+  box-shadow: inset 0 0 0 1px var(--border);
 }
 
 .move-img {
-  width: 38px;
-  height: 38px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
 .move-container h4 {
   margin-top: 0.25rem;
-  font-size: 0.8rem;
+  font-size: 1.02rem;
   font-weight: 600;
   color: var(--text-soft);
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.8rem;
+  min-height: 0;
+  height: 100%;
 }
 
 .timing-container {
-  padding: 1rem;
+  padding: 0.9rem;
   display: grid;
-  gap: 0.8rem;
+  grid-template-rows: 1fr auto;
+  gap: 0.7rem;
+  min-height: 0;
 }
 
 .time-card {
   border-radius: 16px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  padding: 1.2rem;
-}
-
-.time-label {
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  font-size: 0.72rem;
-  color: var(--text-soft);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 0 0 1px var(--border);
+  padding: 1.15rem;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  contain: layout paint;
 }
 
 .time {
-  margin-top: 0.5rem;
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-family: "Orbitron", "Consolas", "Courier New", monospace;
+  font-size: clamp(4.2rem, 12vw, 9rem);
+  text-align: center;
   line-height: 1;
   color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  max-width: 100%;
 }
 
 .average-container {
   display: grid;
   grid-template-columns: repeat(2, minmax(120px, 1fr));
-  gap: 0.75rem;
+  gap: 0.7rem;
 }
 
 .avg {
   border-radius: 14px;
-  border: 1px solid var(--border);
-  background: var(--card);
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 0 0 1px var(--border);
   padding: 0.9rem;
   text-align: center;
 }
 
-.avg h3 {
+.avg::before {
+  content: attr(data-label);
+  display: block;
   font-size: 0.8rem;
   letter-spacing: 0.08em;
   color: var(--text-soft);
+  margin-bottom: 0.35rem;
 }
 
 .avg-num {
-  margin-top: 0.45rem;
   font-family: "Courier New", Courier, monospace;
-  font-size: 1.95rem;
+  font-size: 2.3rem;
   color: var(--good);
 }
 
 .stats-container {
-  padding: 1rem;
+  padding: 0.9rem;
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: 0.65rem;
-  min-height: 460px;
-}
-
-.stats-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.stats-header-row h2 {
-  font-size: 1.08rem;
-  letter-spacing: 0.04em;
-}
-
-.stats-headings,
-.solve-details {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  text-align: center;
-}
-
-.stats-headings {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 0.55rem 0.2rem;
-  background: rgba(16, 23, 55, 0.9);
-}
-
-.stats-heading h4 {
-  font-size: 0.78rem;
-  letter-spacing: 0.06em;
-  color: var(--text-soft);
-  text-transform: uppercase;
+  grid-template-rows: 1fr auto;
+  gap: 0.7rem;
+  min-height: 0;
 }
 
 .statistics {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--card);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 0 0 1px var(--border);
   overflow: auto;
 }
 
 .solve-details {
-  border-bottom: 1px solid rgba(126, 156, 255, 0.15);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  border-bottom: 1px solid rgba(132, 156, 222, 0.2);
 }
 
 .solve {
-  padding: 0.72rem 0.25rem;
-  font-size: 1rem;
+  padding: 0.75rem 0.3rem;
+  font-size: 1.08rem;
   font-family: "Courier New", Courier, monospace;
 }
 
 .btn {
-  margin-top: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .reset-btn {
   border: none;
-  border-radius: 10px;
-  padding: 0.52rem 0.95rem;
+  border-radius: 12px;
+  padding: 0.56rem 1rem;
   cursor: pointer;
   color: white;
   letter-spacing: 0.04em;
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
-  background: linear-gradient(120deg, var(--accent-strong), var(--accent));
-  transition: transform 140ms ease, filter 140ms ease;
+  background: linear-gradient(120deg, #5e95ff, var(--accent));
+  transition: filter 140ms ease, transform 140ms ease;
 }
 
 .reset-btn:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.04);
   transform: translateY(-1px);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1150px) {
   .algorithm-container {
-    grid-template-columns: repeat(6, minmax(62px, 1fr));
+    grid-template-columns: repeat(5, minmax(90px, 1fr));
   }
 
   .main-container {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .stats-container {
-    min-height: 390px;
+  .time-card {
+    min-height: 34vh;
   }
 }
 
-@media (max-width: 650px) {
-  .app-shell {
-    padding: 0.8rem;
-  }
-
-  .top-bar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .top-bar p {
-    text-align: left;
-  }
-
+@media (max-width: 700px) {
   .algorithm-container {
-    grid-template-columns: repeat(3, minmax(62px, 1fr));
+    grid-template-columns: repeat(4, minmax(85px, 1fr));
+  }
+
+  .move-img {
+    width: 52px;
+    height: 52px;
   }
 }
