@@ -8,62 +8,87 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="algorithm-container">
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-      <div class="move-container"></div>
-    </div>
-    <div class="main-container">
-      <div class="stats-container">
-        <h1>Your last solves</h1>
-        <div class="stats-headings">
-          <div class="stats-heading"><h2>No.</h2></div>
-          <div class="stats-heading"><h2>Time</h2></div>
-          <div class="stats-heading"><h2>Ao5</h2></div>
-          <div class="stats-heading"><h2>Ao12</h2></div>
+    <main class="app-shell">
+      <header class="top-bar">
+        <h1>CS Timer Pro</h1>
+        <p>
+          Hold <kbd>Space</kbd> to arm, release to start, then press
+          <kbd>Space</kbd> again to stop.
+        </p>
+      </header>
+
+      <section class="algorithm-panel">
+        <div class="panel-heading">
+          <h2>Current Scramble</h2>
         </div>
-        <div class="statistics"></div>
-        <div class="btn">
-          <button type="button" class="reset-btn">RESET</button>
+        <div class="algorithm-container">
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
+          <div class="move-container"></div>
         </div>
+      </section>
+
+      <div class="main-container">
+        <section class="timing-container">
+          <div class="time-card">
+            <div class="time-label">Current Time</div>
+            <div class="time">00.00</div>
+          </div>
+
+          <div class="average-container">
+            <div class="avg">
+              <h3>PB</h3>
+              <div class="pb avg-num">0</div>
+            </div>
+            <div class="avg">
+              <h3>PW</h3>
+              <div class="pw avg-num">0</div>
+            </div>
+            <div class="avg">
+              <h3>AO5</h3>
+              <div class="ao5 avg-num">0</div>
+            </div>
+            <div class="avg">
+              <h3>AO12</h3>
+              <div class="ao12 avg-num">0</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-container">
+          <div class="stats-header-row">
+            <h2>Recent Solves</h2>
+            <div class="btn">
+              <button type="button" class="reset-btn">Reset Session</button>
+            </div>
+          </div>
+
+          <div class="stats-headings">
+            <div class="stats-heading"><h4>No.</h4></div>
+            <div class="stats-heading"><h4>Time</h4></div>
+            <div class="stats-heading"><h4>Ao5</h4></div>
+            <div class="stats-heading"><h4>Ao12</h4></div>
+          </div>
+          <div class="statistics"></div>
+        </section>
       </div>
-      <div class="timing-container">
-        <div class="time">00.00</div>
-        <div class="average-container">
-          <div class="avg">
-            <h1>PB</h1>
-            <div class="pb avg-num">0</div>
-          </div>
-          <div class="avg">
-            <h1>PW</h1>
-            <div class="pw avg-num">0</div>
-          </div>
-          <div class="avg">
-            <h1>AO5</h1>
-            <div class="ao5 avg-num">0</div>
-          </div>
-          <div class="avg">
-            <h1>AO12</h1>
-            <div class="ao12 avg-num">0</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
